@@ -1,1 +1,4 @@
-study("asdf")
+//@version=6
+indicator("asdf")
+
+plot(3)
