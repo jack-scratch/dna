@@ -1,4 +1,4 @@
-//@version=5
+//@version=6
 indicator("Trendline", overlay = true)
 
 if bar_index == last_bar_index
