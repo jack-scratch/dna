@@ -1,5 +1,5 @@
 //@version=6
-indicator("Trendline", overlay = true)
+library("Trendline")
 
 if bar_index == last_bar_index
     const int roof = 30

@@ -1,5 +1,5 @@
 //@version=6
-indicator("Break of Structure", overlay = true)
+library("Break of Structure")
 
 if barstate.islast
     const int roof = 30
