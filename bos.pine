@@ -1,0 +1,20 @@
+//@version=6
+indicator("Break of Structure", overlay = true)
+
+if barstate.islast
+    const int roof = 30
+    color bos = color.red
+    int idx = 0
+
+    int old_bar_idx = last_bar_index - roof
+
+    for int i = 0 to roof
+        float low_curr = low[i]
+        
+        if low_curr < low[0]
+            idx := i
+            bos := color.green
+
+            break
+
+    label.new(last_bar_index - idx, low[idx], color = bos, yloc = yloc.abovebar)
