@@ -7,7 +7,7 @@ if bar_index == last_bar_index
     var float lower_low = low[roof]
     var bool too_low = false
     for var int i = 0 to roof
-        float low_curr = low[i]
+        var float low_curr = low[i]
 
         if low_curr < lower_low
             lower_low := low_curr
