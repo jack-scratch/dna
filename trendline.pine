@@ -16,12 +16,8 @@ if bar_index == last_bar_index
 
             break
 
-    var float old_high = low[roof]
-    var int old_bar_idx = last_bar_index - roof
-    var float last_high = low[0]
-
     var color valid = color.blue
     if too_low == true
         valid := color.red
 
-    line.new(last_bar_index, last_high, old_bar_idx, old_high, color = valid)
+    line.new(last_bar_index, low[0], last_bar_index - roof, low[roof], color = valid)
