@@ -1,5 +1,9 @@
 //@version=6
 library("Pattern")
 
+type Rng
+	float floor
+	float roof
+
 type Pattern
 	series float low
