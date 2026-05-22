@@ -6,4 +6,5 @@ type Rng
 	float roof
 
 type Pattern
-	series float low
+	Rng body
+	Rng wick
