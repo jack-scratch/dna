@@ -1,10 +1,8 @@
 //@version=6
 library("Trend")
 
-export trend() =>
+export trend(int roof) =>
 	if bar_index == last_bar_index
-			const int roof = 30
-
 			var float lower_low = low[roof]
 			var bool too_low = false
 			for var int i = 0 to roof
