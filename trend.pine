@@ -1,23 +1,24 @@
 //@version=6
 library("Trend")
 
-if bar_index == last_bar_index
-    const int roof = 30
+export trend() =>
+	if bar_index == last_bar_index
+			const int roof = 30
 
-    var float lower_low = low[roof]
-    var bool too_low = false
-    for var int i = 0 to roof
-        var float low_curr = low[i]
+			var float lower_low = low[roof]
+			var bool too_low = false
+			for var int i = 0 to roof
+					var float low_curr = low[i]
 
-        if low_curr < lower_low
-            lower_low := low_curr
+					if low_curr < lower_low
+							lower_low := low_curr
 
-            too_low := true
+							too_low := true
 
-            break
+							break
 
-    var color valid = color.blue
-    if too_low == true
-        valid := color.red
+			var color valid = color.blue
+			if too_low == true
+					valid := color.red
 
-    line.new(last_bar_index, low[0], last_bar_index - roof, low[roof], color = valid)
+			line.new(last_bar_index, low[0], last_bar_index - roof, low[roof], color = valid)
