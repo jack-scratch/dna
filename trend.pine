@@ -2,6 +2,9 @@
 library("Trend")
 
 export trend(int roof) =>
+	if bar_index < 0
+		0
+
 	if bar_index == last_bar_index
 			var float lower_low = low[roof]
 			var bool too_low = false
