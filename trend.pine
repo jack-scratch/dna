@@ -18,7 +18,7 @@ export trend(int roof) =>
 
 							break
 
-			var color valid = color.blue
+			var color valid = color.white
 			if too_low == true
 					valid := color.red
 
