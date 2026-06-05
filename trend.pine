@@ -1,7 +1,7 @@
 //@version=6
 indicator("Trend")
 
-const int roof = 100
+var roof = input.int(100, "Roof")
 
 if bar_index < 0
 	0
