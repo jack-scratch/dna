@@ -1,28 +1,29 @@
 //@version=6
-library("Trend")
+indicator("Trend")
 
-export trend(int roof) =>
-	if bar_index < 0
-		0
+const int roof = 100
 
-	if bar_index == last_bar_index
-			var float lower_low = low[roof]
-			var bool too_low = false
-			for var int i = 0 to roof
-					var float low_curr = low[i]
+if bar_index < 0
+	0
 
-					if low_curr < lower_low
-							lower_low := low_curr
+if bar_index == last_bar_index
+		var float lower_low = low[roof]
+		var bool too_low = false
+		for var int i = 0 to roof
+				var float low_curr = low[i]
 
-							too_low := true
+				if low_curr < lower_low
+						lower_low := low_curr
 
-							break
+						too_low := true
 
-			var color valid = color.white
-			if too_low == true
-					valid := color.red
+						break
 
-			line.new(last_bar_index, low[0], last_bar_index - roof, low[roof], color = valid)
+		var color valid = color.white
+		if too_low == true
+				valid := color.red
 
-			label.new(last_bar_index, low[0], str.tostring(low[0]), color = valid)
-			label.new(last_bar_index - roof, low[roof], str.tostring(low[roof]), color = valid)
+		line.new(last_bar_index, low[0], last_bar_index - roof, low[roof], color = valid)
+
+		label.new(last_bar_index, low[0], str.tostring(low[0]), color = valid)
+		label.new(last_bar_index - roof, low[roof], str.tostring(low[roof]), color = valid)
