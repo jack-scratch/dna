@@ -6,4 +6,4 @@ var int lookback = input.int(100, title = "Lookback")
 int offset = ta.highestbars(high, lookback)
 
 if barstate.islast
-    label.new(x = bar_index + offset, y = high[-offset], text = "Highest High")
+    label.new(x = bar_index + offset, y = high[-offset], text = "High (H)")
