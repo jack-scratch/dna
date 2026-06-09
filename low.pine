@@ -3,7 +3,7 @@ indicator("Low", overlay = true)
 
 var int lookback = input.int(100, title = "Lookback")
 
-const offset = ta.lowestbars(low, lookback)
+int offset = ta.lowestbars(low, lookback)
 
 if barstate.islast
 	label.new(x = bar_index + offset, y = low[-offset], text = "Lowest Low")
