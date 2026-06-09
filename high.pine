@@ -1,9 +1,9 @@
 //@version=6
 indicator("High", overlay = true)
 
-lookback = input.int(20, title = "Lookback")
+var lookback = input.int(20, title = "Lookback")
 
-offset = ta.highestbars(high, lookback)
+const offset = ta.highestbars(high, lookback)
 
 if barstate.islast
     label.new(x = bar_index + offset, y = high[-offset], text = "Highest High")
