@@ -1,15 +1,15 @@
 //@version=6
 library("Break of Structure (BoS)")
 
-var int roof = input.int(100, title = "Roof")
+var int lookback = input.int(100, title = "Lookback")
 
 if barstate.islast
     color bos = color.red
     int idx = 0
 
-    int old_bar_idx = last_bar_index - roof
+    int old_bar_idx = last_bar_index - lookback
 
-    for int i = 0 to roof
+    for int i = 0 to lookback
         float low_curr = low[i]
         
         if low_curr < low[0]
