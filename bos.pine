@@ -1,5 +1,5 @@
 //@version=6
-library("Break of Structure")
+library("Break of Structure (BoS)")
 
 var int roof = input.int(100, title = "Roof")
 

@@ -1,5 +1,5 @@
 //@version=6
-indicator("Low", overlay = true)
+indicator("Low (L)", overlay = true)
 
 var int lookback = input.int(100, title = "Lookback")
 
