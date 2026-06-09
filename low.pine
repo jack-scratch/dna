@@ -1,7 +1,7 @@
 //@version=6
 indicator("Low", overlay = true)
 
-var int lookback = input.int(20, title = "Lookback")
+var int lookback = input.int(100, title = "Lookback")
 
 const offset = ta.lowestbars(low, lookback)
 
