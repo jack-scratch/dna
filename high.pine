@@ -5,7 +5,5 @@ lookback = input.int(20, title = "Lookback")
 
 offset = ta.highestbars(high, lookback)
 
-highest_bar_index = bar_index + offset
-
 if barstate.islast
     label.new(x = bar_index + offset, y = high[-offset], text = "Highest High")

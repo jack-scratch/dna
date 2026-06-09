@@ -5,7 +5,5 @@ lookback = input.int(20, title = "Lookback")
 
 offset = ta.lowestbars(low, lookback)
 
-lowest_bar_index = bar_index + offset
-
 if barstate.islast
 	label.new(x = bar_index + offset, y = low[-offset], text = "Lowest Low")
