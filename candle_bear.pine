@@ -1,0 +1,17 @@
+//@version=6
+indicator("Bearish Candle", overlay = true)
+
+var roof = input.int(100, "Roof", minval = 1, maxval = 300000)
+
+if bar_index < 0
+	0
+
+if barstate.islast
+  var int idx = 0
+  for var int i = 0 to roof
+    if close[i] < open[i]
+    	idx := i
+
+      break
+
+	label.new(bar_index + idx, high[idx], "Bearish Candle")
