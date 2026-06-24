@@ -1,0 +1,14 @@
+//@version=6
+indicator("Doji Candle", overlay = true)
+
+var int lookback = input.int(100, title = "Lookback")
+
+if barstate.islast
+	var int idx = 0
+	for var int i = 0 to lookback
+		if close[i] == open[i]
+			idx := i	
+
+			break
+
+	label.new(bar_index - idx, high[idx], "Doji Candle")
