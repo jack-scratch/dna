@@ -1,5 +1,5 @@
 //@version=6
-indicator("Long-Legged Doji Candle", overlay = true)
+indicator("One-Legged Doji Candle", overlay = true)
 
 var int lookback = input.int(100, title = "Lookback")
 
@@ -12,4 +12,4 @@ if barstate.islast
 
 			break
 
-	label.new(bar_index - idx, high[idx], "Long-Legged Doji Candle")
+	label.new(bar_index - idx, high[idx], "One-Legged Doji Candle")
