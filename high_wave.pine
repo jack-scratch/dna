@@ -11,4 +11,4 @@ if barstate.islast
 
 			break
 
-	label.new(bar_index - idx, high[idx], str.tostring('High Wave Candle'))
+	label.new(bar_index - idx, high[idx], str.tostring("High Wave Candle"))
