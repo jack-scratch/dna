@@ -1,0 +1,17 @@
+//@version=6
+indicator("Inverted Hammer Candle", overlay = true)
+
+var int lookback = input.int(100, title = "Lookback")
+
+if barstate.islast
+	var int idx = 0
+	for var int i = 0 to lookback
+		float open_curr = open[i]
+		float close_curr = close[i]
+
+		if high[i] - math.max(open_curr, close_curr) > math.abs(open_curr - close_curr)
+			idx := i	
+
+			break
+
+	label.new(bar_index - idx, high[idx], "Inverted Hammer Candle")
