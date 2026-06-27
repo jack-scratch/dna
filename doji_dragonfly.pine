@@ -1,5 +1,5 @@
 //@version=6
-indicator("Dragonfly Doji Candle", overlay = true)
+library("Dragonfly Doji Candle")
 
 var int lookback = input.int(100, title = "Lookback")
 

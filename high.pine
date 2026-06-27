@@ -1,5 +1,5 @@
 //@version=6
-indicator("High (H)", overlay = true)
+library("High (H)")
 
 var int lookback = input.int(100, title = "Lookback")
 

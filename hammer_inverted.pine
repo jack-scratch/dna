@@ -1,5 +1,5 @@
 //@version=6
-indicator("Inverted Hammer Candle", overlay = true)
+library("Inverted Hammer Candle")
 
 var int lookback = input.int(100, title = "Lookback")
 

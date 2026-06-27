@@ -1,5 +1,5 @@
 //@version=6
-indicator("Bearish Candle", overlay = true)
+library("Bearish Candle")
 
 var roof = input.int(100, "Roof", minval = 1, maxval = 300000)
 
