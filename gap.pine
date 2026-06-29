@@ -1,0 +1,13 @@
+//@version=6
+library("Gap")
+
+var int lookback = input.int(100, title = "Lookback")
+
+if barstate.islast
+	for var int i = 0 to lookback
+		var int i_prev = i + 1
+
+		if open[i] != open[i_prev]
+            box.new(left = bar_index - i_prev, right = bar_index - i, bottom = open[i_prev], top = open[i])
+
+			break
