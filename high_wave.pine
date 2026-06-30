@@ -1,5 +1,5 @@
 //@version=6
-library("High Wave Candle")
+library("high_wave")
 
 var int lookback = input.int(100, title = "Lookback")
 

@@ -1,5 +1,5 @@
 //@version=6
-library("Color")
+library("color")
 
 const color straight = color.white
 const color pos = color.blue

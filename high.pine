@@ -1,5 +1,5 @@
 //@version=6
-library("High (H)")
+library("high")
 
 var int lookback = input.int(100, title = "Lookback")
 

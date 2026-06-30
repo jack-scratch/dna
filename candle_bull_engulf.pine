@@ -1,5 +1,5 @@
 //@version=6
-library("Bullish Engulfing Candle")
+library("candle_bull_engulf")
 
 var roof = input.int(100, "Roof", minval = 1, maxval = 300000)
 

@@ -1,5 +1,5 @@
 //@version=6
-library("Doji Candle")
+library("doji")
 
 var int lookback = input.int(100, title = "Lookback")
 

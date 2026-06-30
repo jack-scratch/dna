@@ -1,5 +1,5 @@
 //@version=6
-library("Inverted Hammer Candle")
+library("hammer_inverted")
 
 var int lookback = input.int(100, title = "Lookback")
 

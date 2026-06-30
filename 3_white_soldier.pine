@@ -1,5 +1,5 @@
 //@version=6
-library("3 White Soldiers")
+library("three_white_soldier")
 
 var int lookback = input.int(100, title = "Lookback")
 

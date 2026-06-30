@@ -1,5 +1,5 @@
 //@version=6
-library("Pattern")
+library("pattern")
 
 type Rng
 	float floor
