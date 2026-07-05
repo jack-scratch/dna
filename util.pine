@@ -1,0 +1,8 @@
+//@version=6
+library("util")
+
+body_floor(idx) =>
+	min(open[idx], close[idx])
+
+body_roof(idx) =>
+	max(open[idx], close[idx])
