@@ -4,3 +4,6 @@ library("abbr")
 type Abbr
 	string name
 	string alt
+
+Abbr l = Abbr.new('Low', 'L')
+Abbr h = Abbr.new('High', 'H')
