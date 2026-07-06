@@ -2,7 +2,7 @@
 library("util")
 
 body_floor(idx) =>
-	min(open[idx], close[idx])
+	math.min(open[idx], close[idx])
 
 body_roof(idx) =>
-	max(open[idx], close[idx])
+	math.max(open[idx], close[idx])
