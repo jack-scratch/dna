@@ -1,9 +1,9 @@
 //@version=6
 library("alt")
 
-type Abbr
+type Alt
 	string name
 	string alt
 
-Abbr l = Abbr.new('Low', 'L')
-Abbr h = Abbr.new('High', 'H')
+Alt l = Alt.new('Low', 'L')
+Alt h = Alt.new('High', 'H')
