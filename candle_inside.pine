@@ -1,0 +1,19 @@
+//@version=6
+indicator("candle_inside", overlay = true)
+
+var roof = input.int(100, "Roof", minval = 1, maxval = 300000)
+
+if bar_index < 0
+	0
+
+if barstate.islast
+	var int idx = 0
+	for var int i = 0 to roof
+		int idx_prev = i + 1
+
+		if open[i] > open[idx_prev] and close[i] < close[idx_prev]
+			idx := i
+
+			break
+
+	label.new(bar_index - idx, high[idx], str.tostring("Inside Bar"))
