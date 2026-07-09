@@ -2,12 +2,12 @@
 library("doji")
 
 export doji(int lookback) =>
-	var int idx = -1
+	var int offset = -1
 	for var int i = 0 to lookback
 		if close[i] == open[i]
-			idx := i	
+			offset := i	
 
 			break
 
-	if idx != -1
-		label.new(bar_index - idx, high[idx], "Doji Candle")
+	if offset != -1
+		label.new(bar_index - offset, high[offset], "Doji Candle")
