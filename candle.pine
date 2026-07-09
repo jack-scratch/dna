@@ -2,6 +2,11 @@
 library("candle")
 
 export doji(int lookback) =>
+	if offset < 0
+		log.error('Error: Index negative')
+
+		return
+
 	var int offset = -1
 	for var int i = 0 to lookback
 		if close[i] == open[i]
