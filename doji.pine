@@ -2,12 +2,12 @@
 library("doji")
 
 export doji(int lookback) =>
-	if barstate.islast
-		var int idx = 0
-		for var int i = 0 to lookback
-			if close[i] == open[i]
-				idx := i	
+	var int idx = -1
+	for var int i = 0 to lookback
+		if close[i] == open[i]
+			idx := i	
 
-				break
+			break
 
+	if idx != -1
 		label.new(bar_index - idx, high[idx], "Doji Candle")
