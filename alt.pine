@@ -5,5 +5,8 @@ type Alt
 	string name
 	string alt
 
+export alt_print(Alt alt) =>
+	str.format('{0} ({1})', alt.name, array.join(alt.alt, ", "))
+
 Alt l = Alt.new('Low', 'L')
 Alt h = Alt.new('High', 'H')
