@@ -1,5 +1,5 @@
 //@version=6
-library("pattern")
+library("candle_pattern")
 
 type Rng
 	float floor
