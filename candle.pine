@@ -26,6 +26,11 @@ export inside(int lookback) =>
 
 		-1
 
+	if lookback < 2
+		err.print("Index too small to accomodate size of pattern")
+
+		-1
+
 	var int offset = -1
 	for var int i = 0 to lookback
 		int idx_prev = i + 1
