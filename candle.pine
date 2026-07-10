@@ -18,3 +18,21 @@ export doji(int lookback) =>
 
 	if offset != -1
 		label.new(bar_index - offset, high[offset], "Doji Candle")
+
+export inside(int lookback) =>
+	if lookback < 0
+		err.print('Index not natural number')
+
+		return
+
+	var int offset = -1
+	for var int i = 0 to lookback
+		int idx_prev = i + 1
+
+		if open[i] > open[idx_prev] and close[i] < close[idx_prev]
+			offset := i
+
+			break
+
+	if offset != -1
+		label.new(bar_index - offset, high[offset], "Inside Bar")
