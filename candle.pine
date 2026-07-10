@@ -42,3 +42,31 @@ export inside(int lookback) =>
 
 	if offset != -1
 		label.new(bar_index - offset, high[offset], "Inside Bar")
+
+export bull(int lookback) =>
+	if lookback < 0
+		0
+
+	var int offset = -1
+	for var int i = 0 to lookback
+		if close[i] > open[i]
+			offset := i
+
+			break
+
+	if offset != -1
+		label.new(bar_index - offset, high[offset], "Bullish Candle")
+
+export bear(int lookback) =>
+	if lookback < 0
+		0
+
+	var int offset = -1
+	for var int i = 0 to lookback
+		if close[i] > open[i]
+			offset := i
+
+			break
+
+	if offset != -1
+		label.new(bar_index - offset, high[offset], "Bearish Candle")
