@@ -1,9 +1,0 @@
-//@version=6
-library("high")
-
-var int lookback = input.int(100, title = "Lookback")
-
-int offset = ta.highestbars(high, lookback)
-
-if barstate.islast
-    label.new(x = bar_index + offset, y = high[-offset], text = "High (H)")

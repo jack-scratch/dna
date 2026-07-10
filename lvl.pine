@@ -1,0 +1,24 @@
+//@version=6
+library("lvl")
+
+import JackisaDayTrader/err/1
+
+export high(int lookback) =>
+	if lookback < 0
+		err.print("Index not natural number")
+
+		-1
+
+	int offset = ta.highestbars(high, lookback)
+
+	label.new(bar_index - offset, high[offset], "High (H)")
+
+export low(int lookback) =>
+	if lookback < 0
+		err.print("Index not natural number")
+
+		-1
+
+	int offset = ta.lowestbars(low, lookback)
+
+	label.new(bar_index - offset, low[offset], "Low (L)")

@@ -1,9 +1,0 @@
-//@version=6
-library("low")
-
-var int lookback = input.int(100, title = "Lookback")
-
-int offset = ta.lowestbars(low, lookback)
-
-if barstate.islast
-	label.new(x = bar_index + offset, y = low[-offset], text = "Low (L)")
