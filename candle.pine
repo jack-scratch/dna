@@ -7,7 +7,7 @@ export doji(int lookback) =>
 	if lookback < 0
 		err.print('Index not natural number')
 
-		return
+		-1
 
 	var int offset = -1
 	for var int i = 0 to lookback
@@ -23,7 +23,7 @@ export inside(int lookback) =>
 	if lookback < 0
 		err.print('Index not natural number')
 
-		return
+		-1
 
 	var int offset = -1
 	for var int i = 0 to lookback
