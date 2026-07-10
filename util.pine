@@ -1,8 +1,8 @@
 //@version=6
 library("util")
 
-export body_floor(idx) =>
+export body_floor(int idx) =>
 	math.min(open[idx], close[idx])
 
-export body_roof(idx) =>
+export body_roof(int idx) =>
 	math.max(open[idx], close[idx])
