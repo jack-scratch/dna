@@ -2,6 +2,7 @@
 library("candle")
 
 import JackisaDayTrader/err/1
+import JackisaDayTrader/util/1
 
 export doji(int lookback) =>
 	if lookback < 0
@@ -29,7 +30,7 @@ export inside(int lookback) =>
 	for var int i = 0 to lookback
 		int idx_prev = i + 1
 
-		if open[i] > open[idx_prev] and close[i] < close[idx_prev]
+		if util.body_floor(i) > util.body_floor(idx_prev) and util.body_roof(i) < util.body_roof(idx_prev)
 			offset := i
 
 			break
