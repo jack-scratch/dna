@@ -3,7 +3,7 @@ library("alt")
 
 type Alt
 	string name
-	string alt
+	string[] alt
 
 export alt_print(Alt alt) =>
 	str.format('{0} ({1})', alt.name, array.join(alt.alt, ", "))
