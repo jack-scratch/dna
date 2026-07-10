@@ -4,7 +4,7 @@ library("candle")
 import JackisaDayTrader/err/1
 
 export doji(int lookback) =>
-	if offset < 0
+	if lookback < 0
 		err.print('Index not natural number')
 
 		return
