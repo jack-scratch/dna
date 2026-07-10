@@ -6,7 +6,7 @@ import JackisaDayTrader/util/1
 
 export doji(int lookback) =>
 	if lookback < 0
-		err.print('Index not natural number')
+		err.print("Index not natural number")
 
 		-1
 
@@ -22,7 +22,7 @@ export doji(int lookback) =>
 
 export inside(int lookback) =>
 	if lookback < 0
-		err.print('Index not natural number')
+		err.print("Index not natural number")
 
 		-1
 
