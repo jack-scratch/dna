@@ -1,0 +1,5 @@
+//@version=6
+library("err")
+
+export print(string msg) =>
+	log.error(str.format('Error: {0}', msg))
