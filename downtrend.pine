@@ -3,9 +3,6 @@ indicator("downtrend")
 
 var roof = input.int(100, "Roof", minval = 1, maxval = 300000)
 
-if bar_index < 0
-	0
-
 if barstate.islast
 	var float lower_low = low[roof]
 	var bool too_low = false
