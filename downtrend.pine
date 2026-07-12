@@ -20,7 +20,7 @@ if barstate.islast
 	if too_low == true
 		valid := color.red
 
-	line.new(bar_index, low[0], bar_index - roof, low[roof], color = valid)
+	line.new(bar_index, low, bar_index - roof, low[roof], color = valid)
 
-	label.new(bar_index, low[0], str.tostring(low[0]), color = valid)
+	label.new(bar_index, low, str.tostring(low), color = valid)
 	label.new(bar_index - roof, low[roof], str.tostring(low[roof]), color = valid)
