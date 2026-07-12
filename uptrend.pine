@@ -1,0 +1,26 @@
+//@version=6
+indicator("uptrend")
+
+var roof = input.int(100, "Roof", minval = 1, maxval = 300000)
+
+if barstate.islast
+	var float r = high[roof]
+	var bool higher = false
+	for var int i = 0 to roof
+		var float high_curr = high[i]
+
+		if high_curr < r
+			r := high_curr
+
+			higher := true
+
+			break
+
+	var color valid = color.white
+	if higher == true
+		valid := color.red
+
+	line.new(bar_index, high, bar_index - roof, high[roof], color = valid)
+
+	label.new(bar_index, high, str.tostring(high), color = valid)
+	label.new(bar_index - roof, high[roof], str.tostring(high[roof]), color = valid)
