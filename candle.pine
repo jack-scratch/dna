@@ -33,9 +33,9 @@ export inside(int lookback) =>
 
 	var int offset = -1
 	for var int i = 0 to lookback
-		int idx_prev = i + 1
+		int idx_fst = i + 1
 
-		if util.body_floor(i) > util.body_floor(idx_prev) and util.body_roof(i) < util.body_roof(idx_prev)
+		if util.body_floor(i) > util.body_floor(idx_fst) and util.body_roof(i) < util.body_roof(idx_prev)
 			offset := i
 
 			break
