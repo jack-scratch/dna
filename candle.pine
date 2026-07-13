@@ -45,6 +45,8 @@ export inside(int lookback) =>
 
 export bull(int lookback) =>
 	if lookback < 0
+		err.print("Index not natural number")
+
 		-1
 
 	var int offset = -1
@@ -59,6 +61,8 @@ export bull(int lookback) =>
 
 export bear(int lookback) =>
 	if lookback < 0
+		err.print("Index not natural number")
+
 		-1
 
 	var int offset = -1
