@@ -12,30 +12,30 @@ export doji(int lookback) =>
 	if lookback < 0
 		err.print("Index not natural number")
 
-		-1
+		na
 
-	var int offset = -1
+	var int offset = na
 	for var int i = 0 to lookback
 		if close[i] == open[i]
 			offset := i	
 
 			break
 
-	if offset != -1
+	if offset != na
 		label.new(bar_index[offset], high[offset], "Doji Candle")
 
 export inside(int lookback) =>
 	if lookback < 0
 		err.print("Index not natural number")
 
-		-1
+		na
 
 	if lookback < 2
 		err.print("Index too small to accomodate size of pattern")
 
-		-1
+		na
 
-	var int offset = -1
+	var int offset = na
 	for var int i = 0 to lookback
 		int idx_fst = i + 1
 
@@ -44,37 +44,37 @@ export inside(int lookback) =>
 
 			break
 
-	if offset != -1
+	if offset != na
 		label.new(bar_index[offset], high[offset], "Inside Bar")
 
 export bull(int lookback) =>
 	if lookback < 0
 		err.print("Index not natural number")
 
-		-1
+		na
 
-	var int offset = -1
+	var int offset = na
 	for var int i = 0 to lookback
 		if close[i] > open[i]
 			offset := i
 
 			break
 
-	if offset != -1
+	if offset != na
 		label.new(bar_index[offset], high[offset], "Bullish Candle")
 
 export bear(int lookback) =>
 	if lookback < 0
 		err.print("Index not natural number")
 
-		-1
+		na
 
-	var int offset = -1
+	var int offset = na
 	for var int i = 0 to lookback
 		if close[i] > open[i]
 			offset := i
 
 			break
 
-	if offset != -1
+	if offset != na
 		label.new(bar_index[offset], high[offset], "Bearish Candle")
