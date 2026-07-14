@@ -20,7 +20,7 @@ export high(int lookback) =>
 
 	int offset = ta.highestbars(high, lookback)
 
-	label.new(bar_index - offset, high[offset], alt.alt_print(l))
+	label.new(bar_index[offset], high[offset], alt.alt_print(l))
 
 export low(int lookback) =>
 	if lookback < 0
@@ -30,4 +30,4 @@ export low(int lookback) =>
 
 	int offset = ta.lowestbars(low, lookback)
 
-	label.new(bar_index - offset, low[offset], alt.alt_print(l))
+	label.new(bar_index[offset], low[offset], alt.alt_print(l))
