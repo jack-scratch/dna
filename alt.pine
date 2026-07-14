@@ -6,12 +6,12 @@ export type Alt
 	string[] alt
 
 export alt_print(Alt alt) =>
-	str.format('{0} ({1})', alt.name, array.join(alt.alt, ", "))
+	str.format("{0} ({1})", alt.name, array.join(alt.alt, ", "))
 
 string[] l_alt = array.new<string>()
-l_alt.push('L')
-Alt l = Alt.new('Low', l_alt)
+l_alt.push("L")
+Alt l = Alt.new("Low", l_alt)
 
 string[] h_alt = array.new<string>()
-h_alt.push('H')
-Alt h = Alt.new('High', h_alt)
+h_alt.push("H")
+Alt h = Alt.new("High", h_alt)
