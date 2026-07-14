@@ -2,6 +2,15 @@
 library("lvl")
 
 import JackisaDayTrader/err/1
+import JackisaDayTrader/alt/1
+
+string[] l_alt = array.new<string>()
+l_alt.push("L")
+Alt l = Alt.new("Low", l_alt)
+
+string[] h_alt = array.new<string>()
+h_alt.push("H")
+Alt h = Alt.new("High", h_alt)
 
 export high(int lookback) =>
 	if lookback < 0
@@ -11,7 +20,7 @@ export high(int lookback) =>
 
 	int offset = ta.highestbars(high, lookback)
 
-	label.new(bar_index - offset, high[offset], "High (H)")
+	label.new(bar_index - offset, high[offset], alt.alt_print(l))
 
 export low(int lookback) =>
 	if lookback < 0
@@ -21,4 +30,4 @@ export low(int lookback) =>
 
 	int offset = ta.lowestbars(low, lookback)
 
-	label.new(bar_index - offset, low[offset], "Low (L)")
+	label.new(bar_index - offset, low[offset], alt.alt_print(l))
