@@ -16,7 +16,7 @@ export high(int lookback) =>
 	if lookback < 0
 		err.print("Index not natural number")
 
-		-1
+		na
 
 	int offset = ta.highestbars(high, lookback)
 
@@ -26,7 +26,7 @@ export low(int lookback) =>
 	if lookback < 0
 		err.print("Index not natural number")
 
-		-1
+		na
 
 	int offset = ta.lowestbars(low, lookback)
 
