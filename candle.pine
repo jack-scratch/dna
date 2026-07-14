@@ -4,6 +4,10 @@ library("candle")
 import JackisaDayTrader/err/1
 import JackisaDayTrader/util/1
 
+export type Label
+	int idx
+	string str
+
 export doji(int lookback) =>
 	if lookback < 0
 		err.print("Index not natural number")
