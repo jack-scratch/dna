@@ -1,10 +1,6 @@
 //@version=6
 library("candle_pattern")
 
-type Rng
-	float floor
-	float roof
-
 type Pattern
 	Rng body
 	Rng wick
