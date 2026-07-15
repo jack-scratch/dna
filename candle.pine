@@ -47,6 +47,7 @@ export inside(int lookback) =>
 
 	int[] offset = array.new<int>()
 	for var int i = 0 to lookback
+		int idx_fst = i + 1
 		if util.body_floor(i) > util.body_floor(idx_fst) and util.body_roof(i) < util.body_roof(idx_fst)
 			array.push(offset, i)
 
