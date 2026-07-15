@@ -1,0 +1,4 @@
+//@version=6
+indicator("dna", overlay = true)
+
+var int lookback = input.int(100, title = "Lookback")
