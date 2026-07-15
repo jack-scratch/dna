@@ -14,10 +14,10 @@ export bull(int lookback) =>
 
 		na
 
-	int[] offset = array.new<int>()
+	Label[] offset = array.new<Label>()
 	for var int i = 0 to lookback
 		if close[i] > open[i]
-			array.push(offset, i)
+			array.push(offset, Label.new(i, "Bullish Candle"))
 
 	offset
 
@@ -27,10 +27,10 @@ export bear(int lookback) =>
 
 		na
 
-	int[] offset = array.new<int>()
+	Label[] offset = array.new<Label>()
 	for var int i = 0 to lookback
 		if close[i] < open[i]
-			array.push(offset, i)
+			array.push(offset, Label.new(i, "Bearish Candle"))
 
 	offset
 
@@ -45,11 +45,11 @@ export inside(int lookback) =>
 
 		na
 
-	int[] offset = array.new<int>()
+	Label[] offset = array.new<Label>()
 	for var int i = 0 to lookback
 		int idx_fst = i + 1
 		if util.body_floor(i) > util.body_floor(idx_fst) and util.body_roof(i) < util.body_roof(idx_fst)
-			array.push(offset, i)
+			array.push(offset, Label.new(i, "Inside Candle"))
 
 	offset
 
@@ -59,9 +59,9 @@ export doji(int lookback) =>
 
 		na
 
-	int[] offset = array.new<int>()
+	Label[] offset = array.new<Label>()
 	for var int i = 0 to lookback
 		if close[i] == open[i]
-			array.push(offset, i)
+			array.push(offset, Label.new(i, "Doji Candle"))
 
 	offset
