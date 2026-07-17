@@ -1,0 +1,48 @@
+//@version=6
+library("trend")
+
+export up(int roof) =>
+	if barstate.islast
+		var float r = high[roof]
+		var bool higher = false
+		for var int i = 0 to roof
+			var float high_curr = high[i]
+
+			if high_curr < r
+				r := high_curr
+
+				higher := true
+
+				break
+
+		var color valid = color.white
+		if higher == true
+			valid := color.red
+
+		line.new(bar_index, high, bar_index[roof], high[roof], color = valid)
+
+		label.new(bar_index, high, str.tostring(high), color = valid)
+		label.new(bar_index[roof], high[roof], str.tostring(high[roof]), color = valid)
+
+export down(int roof) =>
+	if barstate.islast
+		var float l = low[roof]
+		var bool lower = false
+		for var int i = 0 to roof
+			var float low_curr = low[i]
+
+			if low_curr < l
+				l := low_curr
+
+				lower := true
+
+				break
+
+		var color valid = color.white
+		if lower == true
+			valid := color.red
+
+		line.new(bar_index, low, bar_index[roof], low[roof], color = valid)
+
+		label.new(bar_index, low, str.tostring(low), color = valid)
+		label.new(bar_index[roof], low[roof], str.tostring(low[roof]), color = valid)
