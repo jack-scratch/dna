@@ -117,8 +117,8 @@ export doji_one_legged(int lookback) =>
 		if close[i] == mid and (low[i] != mid or high[i] != mid)
 			array.push(offset, Tag.new(i, "Gravestone Doji Candle"))
 
-		offset
-
+	offset
+	
 export hammer_inverted(int lookback) =>
 	if lookback < 0
 		err.print("Index not natural number")
