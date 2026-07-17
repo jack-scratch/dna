@@ -118,3 +118,26 @@ export doji_one_legged(int lookback) =>
 			array.push(offset, Tag.new(i, "Gravestone Doji Candle"))
 
 		offset
+
+export hammer_inverted(int lookback) =>
+	if lookback < 0
+		err.print("Index not natural number")
+
+		na
+
+	if lookback < 1
+		err.print("Index too small to accomodate size of pattern")
+
+		na
+
+	Tag[] offset = array.new<Tag>()
+	for var int i = 0 to lookback
+		float open_curr = open[i]
+		float close_curr = close[i]
+
+		if high[i] - math.max(open_curr, close_curr) > math.abs(open_curr - close_curr)
+			array.push(offset, Tag.new(i, "Inverted Hammer Candle"))
+
+			break
+
+	offset
