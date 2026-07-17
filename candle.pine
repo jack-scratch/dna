@@ -99,3 +99,22 @@ export doji_gravestone(int lookback) =>
 			array.push(offset, Tag.new(i, "Gravestone Doji Candle"))
 
 	offset
+
+export doji_one_legged(int lookback) =>
+	if lookback < 0
+		err.print("Index not natural number")
+
+		na
+
+	if lookback < 1
+		err.print("Index too small to accomodate size of pattern")
+
+		na
+
+	Tag[] offset = array.new<Tag>()
+	for var int i = 0 to lookback
+		float mid = open[i]
+		if close[i] == mid and (low[i] != mid or high[i] != mid)
+			array.push(offset, Tag.new(i, "Gravestone Doji Candle"))
+
+		offset
