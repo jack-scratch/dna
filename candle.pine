@@ -14,6 +14,11 @@ export bull(int lookback) =>
 
 		na
 
+	if lookback < 1
+		err.print("Index too small to accomodate size of pattern")
+
+		na
+
 	Tag[] offset = array.new<Tag>()
 	for var int i = 0 to lookback
 		if close[i] > open[i]
@@ -24,6 +29,11 @@ export bull(int lookback) =>
 export bear(int lookback) =>
 	if lookback < 0
 		err.print("Index not natural number")
+
+		na
+
+	if lookback < 1
+		err.print("Index too small to accomodate size of pattern")
 
 		na
 
@@ -56,6 +66,11 @@ export inside(int lookback) =>
 export doji(int lookback) =>
 	if lookback < 0
 		err.print("Index not natural number")
+
+		na
+
+	if lookback < 1
+		err.print("Index too small to accomodate size of pattern")
 
 		na
 
