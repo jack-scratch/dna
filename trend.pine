@@ -2,47 +2,45 @@
 library("trend")
 
 export up(int lookback) =>
-	if barstate.islast
-		var float r = high[lookback]
-		var bool higher = false
-		for var int i = 0 to lookback
-			var float high_curr = high[i]
+	var float r = high[lookback]
+	var bool higher = false
+	for var int i = 0 to lookback
+		var float high_curr = high[i]
 
-			if high_curr < r
-				r := high_curr
+		if high_curr < r
+			r := high_curr
 
-				higher := true
+			higher := true
 
-				break
+			break
 
-		var color valid = color.white
-		if higher
-			valid := color.red
+	var color valid = color.white
+	if higher
+		valid := color.red
 
-		line.new(bar_index, high, bar_index[lookback], high[lookback], color = valid)
+	line.new(bar_index, high, bar_index[lookback], high[lookback], color = valid)
 
-		label.new(bar_index, high, str.tostring(high), color = valid)
-		label.new(bar_index[lookback], high[lookback], str.tostring(high[lookback]), color = valid)
+	label.new(bar_index, high, str.tostring(high), color = valid)
+	label.new(bar_index[lookback], high[lookback], str.tostring(high[lookback]), color = valid)
 
 export down(int lookback) =>
-	if barstate.islast
-		var float l = low[lookback]
-		var bool lower = false
-		for var int i = 0 to lookback
-			var float low_curr = low[i]
+	var float l = low[lookback]
+	var bool lower = false
+	for var int i = 0 to lookback
+		var float low_curr = low[i]
 
-			if low_curr < l
-				l := low_curr
+		if low_curr < l
+			l := low_curr
 
-				lower := true
+			lower := true
 
-				break
+			break
 
-		var color valid = color.white
-		if lower
-			valid := color.red
+	var color valid = color.white
+	if lower
+		valid := color.red
 
-		line.new(bar_index, low, bar_index[lookback], low[lookback], color = valid)
+	line.new(bar_index, low, bar_index[lookback], low[lookback], color = valid)
 
-		label.new(bar_index, low, str.tostring(low), color = valid)
-		label.new(bar_index[lookback], low[lookback], str.tostring(low[lookback]), color = valid)
+	label.new(bar_index, low, str.tostring(low), color = valid)
+	label.new(bar_index[lookback], low[lookback], str.tostring(low[lookback]), color = valid)
