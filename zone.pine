@@ -1,11 +1,19 @@
 //@version=6
 library("zone")
 
+export type Zone
+	int start
+	int end
+	float floor
+	float roof
+
 export gap(int lookback) =>
 	for var int i = 0 to lookback
 		var int i_fst = i + 1
 
 		if open[i] != open[i_fst]
-			box.new(left = bar_index[i_fst], right = bar_index[i], bottom = open[i_fst], top = open[i])
+			Zone.new(bar_index[i_fst], bar_index[i], open[i_fst], open[i])
 
 			break
+
+	na
