@@ -2,6 +2,9 @@
 library("trend")
 
 export up(int lookback) =>
+	if high <= high[lookback]
+		na
+
 	var float r = high[lookback]
 	var bool higher = false
 	for var int i = 0 to lookback
@@ -24,6 +27,9 @@ export up(int lookback) =>
 	label.new(bar_index[lookback], high[lookback], str.tostring(high[lookback]), color = valid)
 
 export down(int lookback) =>
+	if low >= high[lookback]
+		na
+
 	var float l = low[lookback]
 	var bool lower = false
 	for var int i = 0 to lookback
