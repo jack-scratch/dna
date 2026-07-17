@@ -115,7 +115,7 @@ export doji_one_legged(int lookback) =>
 	for var int i = 0 to lookback
 		float mid = open[i]
 		if close[i] == mid and (low[i] != mid or high[i] != mid)
-			array.push(offset, Tag.new(i, "Gravestone Doji Candle"))
+			array.push(offset, Tag.new(i, "One Legged Doji Candle"))
 
 	offset
 	
