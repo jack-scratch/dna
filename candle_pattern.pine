@@ -45,6 +45,6 @@ export three_white_soldier(int lookback)
 	var int thrd = i + 2
 
 	if close[i] > open[i] and close[snd] > open[snd] and close[thrd] > open[thrd]
-		zone.Zone.new(bar_index - thrd, bar_index - i, math.min(low[i], low[snd], low[thrd]), math.max(high[i], high[snd], high[thrd]))
+		zone.Zone.new(bar_index[thrd], bar_index[i], math.min(low[i], low[snd], low[thrd]), math.max(high[i], high[snd], high[thrd]))
 
 		break
