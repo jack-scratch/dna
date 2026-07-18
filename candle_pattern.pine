@@ -41,3 +41,14 @@ export bos(int lookback)
 			break
 
 	label.new(last_bar_index[idx], low[idx], yloc = yloc.abovebar)
+
+export three_white_soldier(int lookback)
+	var int idx = 0
+	for var int i = 0 to lookback - 2
+	var int snd = i + 1
+	var int thrd = i + 2
+
+	if close[i] > open[i] and close[snd] > open[snd] and close[thrd] > open[thrd]
+		box.new(left = bar_index - thrd, right = bar_index - i, bottom = math.min(low[i], low[snd], low[thrd]), top = math.max(high[i], high[snd], high[thrd]))
+
+		break
