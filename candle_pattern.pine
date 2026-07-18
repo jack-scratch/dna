@@ -1,7 +1,7 @@
 //@version=6
 library("candle_pattern")
 
-import JackisaDayTrader/candle/1
+import JackisaDayTrader/bar/1
 import JackisaDayTrader/zone/1
 
 type Pattern

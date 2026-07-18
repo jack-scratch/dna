@@ -1,5 +1,5 @@
 //@version=6
-library("candle")
+library("bar")
 
 import JackisaDayTrader/err/1
 import JackisaDayTrader/util/1
