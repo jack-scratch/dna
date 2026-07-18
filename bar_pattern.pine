@@ -84,3 +84,21 @@ export candle_bear_engulf(int lookback)
 			array.push(offset, Tag.new(bar_index[i], "Bullish Engulfing Bar"))
 
 	offset
+
+export fvg(int lookback)
+	if lookback < 0
+		err.print("Index not natural number")
+
+		na
+
+	if lookback < 3
+		err.print("Index too small to accomodate size of pattern")
+
+		na
+
+	Tag[] offset = array.new<Tag>()
+	for var int i = 0 to lookback
+		if open[i] > close[i + 2]
+			array.push(offset, Tag.new(bar_index[i], "Fair Value Gap"))
+
+	offset
