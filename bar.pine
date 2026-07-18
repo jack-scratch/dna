@@ -22,7 +22,7 @@ export bull(int lookback) =>
 	Tag[] offset = array.new<Tag>()
 	for var int i = 0 to lookback
 		if close[i] > open[i]
-			array.push(offset, Tag.new(i, "Bullish Candle"))
+			array.push(offset, Tag.new(i, "Bullish Bar"))
 
 	offset
 
@@ -40,7 +40,7 @@ export bear(int lookback) =>
 	Tag[] offset = array.new<Tag>()
 	for var int i = 0 to lookback
 		if close[i] < open[i]
-			array.push(offset, Tag.new(i, "Bearish Candle"))
+			array.push(offset, Tag.new(i, "Bearish Bar"))
 
 	offset
 
@@ -59,7 +59,7 @@ export inside(int lookback) =>
 	for var int i = 0 to lookback
 		int idx_fst = i + 1
 		if util.body_floor(i) > util.body_floor(idx_fst) and util.body_roof(i) < util.body_roof(idx_fst)
-			array.push(offset, Tag.new(i, "Inside Candle"))
+			array.push(offset, Tag.new(i, "Inside Bar"))
 
 	offset
 
@@ -77,7 +77,7 @@ export doji(int lookback) =>
 	Tag[] offset = array.new<Tag>()
 	for var int i = 0 to lookback
 		if close[i] == open[i]
-			array.push(offset, Tag.new(i, "Doji Candle"))
+			array.push(offset, Tag.new(i, "Doji Bar"))
 
 	offset
 
@@ -96,7 +96,7 @@ export doji_gravestone(int lookback) =>
 	for var int i = 0 to lookback
 		float mid = open[i]
 		if close[i] == mid and low[i] == mid and high[i] != mid
-			array.push(offset, Tag.new(i, "Gravestone Doji Candle"))
+			array.push(offset, Tag.new(i, "Gravestone Doji Bar"))
 
 	offset
 
@@ -115,7 +115,7 @@ export doji_one_legged(int lookback) =>
 	for var int i = 0 to lookback
 		float mid = open[i]
 		if close[i] == mid and (low[i] != mid or high[i] != mid)
-			array.push(offset, Tag.new(i, "One Legged Doji Candle"))
+			array.push(offset, Tag.new(i, "One Legged Doji Bar"))
 
 	offset
 	
@@ -136,7 +136,7 @@ export hammer_inverted(int lookback) =>
 		float close_curr = close[i]
 
 		if high[i] - math.max(open_curr, close_curr) > math.abs(open_curr - close_curr)
-			array.push(offset, Tag.new(i, "Inverted Hammer Candle"))
+			array.push(offset, Tag.new(i, "Inverted Hammer Bar"))
 
 			break
 
@@ -159,7 +159,7 @@ export high_wave(int lookback) =>
 		float close_curr = close[i]
 
 		if high[i] - low[i] >= (close[i] - open[i]) * 2
-			array.push(offset, Tag.new(i, "High Wave Candle"))
+			array.push(offset, Tag.new(i, "High Wave Bar"))
 
 			break
 
