@@ -48,3 +48,40 @@ export three_white_soldier(int lookback)
 		zone.Zone.new(bar_index[thrd], bar_index[i], math.min(low[i], low[snd], low[thrd]), math.max(high[i], high[snd], high[thrd]))
 
 		break
+
+export candle_bull_engulf(int lookback)
+	if lookback < 0
+		err.print("Index not natural number")
+
+		na
+
+	if lookback < 2
+		err.print("Index too small to accomodate size of pattern")
+
+		na
+
+	Tag[] offset = array.new<Tag>()
+	for var int i = 0 to lookback
+		if (close[i + 1] < open[i + 1]) and (close[i] > open[i]) and ((open[i] < open[i + 1]) and (close[i] > close[i + 1]))
+			array.push(offset, Tag.new(bar_index[i], "Bullish Engulfing Candle"))
+
+	offset
+
+export candle_bear_engulf(int lookback)
+	if lookback < 0
+		err.print("Index not natural number")
+
+		na
+
+	if lookback < 2
+		err.print("Index too small to accomodate size of pattern")
+
+		na
+
+
+	Tag[] offset = array.new<Tag>()
+	for var int i = 0 to lookback
+		if (close[i + 1] > open[i + 1]) and (close[i] < open[i]) and ((open[i] < open[i + 1]) and (close[i] > close[i + 1]))
+			array.push(offset, Tag.new(bar_index[i], "Bullish Engulfing Candle"))
+
+	offset
