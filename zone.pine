@@ -8,6 +8,16 @@ export type Zone
 	float roof
 
 export gap(int lookback) =>
+	if lookback < 0
+		err.print("Index not natural number")
+
+		na
+
+	if lookback < 2
+		err.print("Index too small to accomodate size of pattern")
+
+		na
+
 	for var int i = 0 to lookback
 		var int i_fst = i + 1
 
