@@ -1,5 +1,5 @@
 //@version=6
-library("candle_pattern")
+library("bar_pattern")
 
 import JackisaDayTrader/bar/1
 import JackisaDayTrader/zone/1
