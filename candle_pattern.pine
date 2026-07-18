@@ -1,6 +1,30 @@
 //@version=6
 library("candle_pattern")
 
+import JackisaDayTrader/candle/1
+
 type Pattern
 	Rng body
 	Rng wick
+
+export shark(int lookback)
+	var int idx = 0
+	for var int i = 0 to lookback - 2
+		if lookback < 0
+			err.print("Index not natural number")
+
+			na
+
+		if lookback < 3
+			err.print("Index too small to accomodate size of pattern")
+
+			na
+
+	var int snd = i + 1
+	var int thrd = i + 2
+
+	Tag[] offset = array.new<Tag>()
+	if open[thrd] < open[snd] and close[thrd] > close[snd] and open[snd] < open[i] and close[snd] > close[i]
+		array.push(offset(Tag.new(i, "Shark")))
+
+	offset
