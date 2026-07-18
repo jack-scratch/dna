@@ -31,17 +31,12 @@ export shark(int lookback)
 	offset
 
 export bos(int lookback)
-	int idx = 0
-	int old_bar_idx = last_bar_index - lookback
+	Tag[] offset = array.new<Tag>()
 	for int i = 0 to lookback
-		float low_curr = low[i]
-		
-		if low_curr < low[0]
-			idx := i
+		if low[i] < low[0]
+			array.push(offset, Tag.new(i, "Break of Structure"))
 
-			break
-
-	label.new(last_bar_index[idx], low[idx], yloc = yloc.abovebar)
+	offset
 
 export three_white_soldier(int lookback)
 	var int idx = 0
