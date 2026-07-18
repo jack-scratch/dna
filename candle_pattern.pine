@@ -28,3 +28,16 @@ export shark(int lookback)
 		array.push(offset(Tag.new(i, "Shark")))
 
 	offset
+
+export bos(int lookback)
+	int idx = 0
+	int old_bar_idx = last_bar_index - lookback
+	for int i = 0 to lookback
+		float low_curr = low[i]
+		
+		if low_curr < low[0]
+			idx := i
+
+			break
+
+	label.new(last_bar_index[idx], low[idx], yloc = yloc.abovebar)
