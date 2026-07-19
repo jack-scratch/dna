@@ -28,17 +28,17 @@ export shark(int lookback)
 		var int snd = i + 1
 		var int thrd = i + 2
 
-		Tag[] offset = array.new<Tag>()
+		bar.Tag[] offset = array.new<bar.Tag>()
 		if open[thrd] < open[snd] and close[thrd] > close[snd] and open[snd] < open[i] and close[snd] > close[i]
-			array.push(offset(Tag.new(i, "Shark")))
+			array.push(offset(bar.Tag.new(i, "Shark")))
 
 	offset
 
 export bos(int lookback)
-	Tag[] offset = array.new<Tag>()
+	bar.Tag[] offset = array.new<bar.Tag>()
 	for int i = 0 to lookback
 		if low[i] < low[0]
-			array.push(offset, Tag.new(i, "Break of Structure"))
+			array.push(offset, bar.Tag.new(i, "Break of Structure"))
 
 	offset
 
@@ -64,10 +64,10 @@ export candle_bull_engulf(int lookback)
 
 		na
 
-	Tag[] offset = array.new<Tag>()
+	bar.Tag[] offset = array.new<bar.Tag>()
 	for var int i = 0 to lookback
 		if (close[i + 1] < open[i + 1]) and (close[i] > open[i]) and ((open[i] < open[i + 1]) and (close[i] > close[i + 1]))
-			array.push(offset, Tag.new(bar_index[i], "Bullish Engulfing Bar"))
+			array.push(offset, bar.Tag.new(bar_index[i], "Bullish Engulfing Bar"))
 
 	offset
 
@@ -82,10 +82,10 @@ export candle_bear_engulf(int lookback)
 
 		na
 
-	Tag[] offset = array.new<Tag>()
+	bar.Tag[] offset = array.new<bar.Tag>()
 	for var int i = 0 to lookback
 		if (close[i + 1] > open[i + 1]) and (close[i] < open[i]) and ((open[i] < open[i + 1]) and (close[i] > close[i + 1]))
-			array.push(offset, Tag.new(bar_index[i], "Bullish Engulfing Bar"))
+			array.push(offset, bar.Tag.new(bar_index[i], "Bullish Engulfing Bar"))
 
 	offset
 
@@ -100,10 +100,10 @@ export fvg(int lookback)
 
 		na
 
-	Tag[] offset = array.new<Tag>()
+	bar.Tag[] offset = array.new<bar.Tag>()
 	for var int i = 0 to lookback
 		if open[i] > close[i + 2]
-			array.push(offset, Tag.new(bar_index[i], "Fair Value Gap"))
+			array.push(offset, bar.Tag.new(bar_index[i], "Fair Value Gap"))
 
 	offset
 
@@ -118,10 +118,10 @@ export tweezer_btm(int lookback) =>
 
 		na
 
-	Tag[] offset = array.new<Tag>()
+	bar.Tag[] offset = array.new<bar.Tag>()
 	for var int i = 0 to lookback
 		int idx_fst = i + 1
 		if low[idx_fst] == low[i]
-			array.push(offset, Tag.new(idx_fst, "Tweezer Bottom"))
+			array.push(offset, bar.Tag.new(idx_fst, "Tweezer Bottom"))
 
 	offset
