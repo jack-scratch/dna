@@ -45,13 +45,13 @@ export bos(int lookback)
 export three_white_soldier(int lookback)
 	var int idx = 0
 	for var int i = 0 to lookback - 2
-	var int snd = i + 1
-	var int thrd = i + 2
+		var int snd = i + 1
+		var int thrd = i + 2
 
-	if close[i] > open[i] and close[snd] > open[snd] and close[thrd] > open[thrd]
-		zone.Zone.new(bar_index[thrd], bar_index[i], math.min(low[i], low[snd], low[thrd]), math.max(high[i], high[snd], high[thrd]))
+		if close[i] > open[i] and close[snd] > open[snd] and close[thrd] > open[thrd]
+			zone.Zone.new(bar_index[thrd], bar_index[i], math.min(low[i], low[snd], low[thrd]), math.max(high[i], high[snd], high[thrd]))
 
-		break
+			break
 
 export candle_bull_engulf(int lookback)
 	if lookback < 0
