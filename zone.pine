@@ -9,6 +9,22 @@ export type Zone
 	float floor
 	float roof
 
+export gap(int lookback) =>
+	if lookback < 0
+		err.print_enum(err.Err.idx_neg)
+
+		na
+
+	if lookback < 2
+		err.print_enum(err.Err.idx_small)
+
+		na
+
+	float close_fst = close[lookback]
+	float open_snd = open[lookback - 1]
+
+	math.max(close_fst, open_snd) < math.min(close_fst, open_snd)
+
 export gap_up(int lookback) =>
 	if lookback < 0
 		err.print_enum(err.Err.idx_neg)
