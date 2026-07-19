@@ -20,7 +20,7 @@ export gap_up(int lookback) =>
 
 		na
 
-	close[i + 1] < open[i]
+	close[lookback] < open[lookback - 1]
 
 export gap_down(int lookback) =>
 	if lookback < 0
@@ -33,4 +33,4 @@ export gap_down(int lookback) =>
 
 		na
 
-	close[i + 1] > open[i]
+	close[lookback] > open[lookback - 1]
