@@ -12,15 +12,17 @@ string[] h_alt = array.new<string>()
 h_alt.push("H")
 Alt h = Alt.new("High", h_alt)
 
+export type Tag
+	float lvl
+	string str
+
 export high(int lookback) =>
 	if lookback < 0
 		err.print_enum(err.Err.idx_neg)
 
 		na
 
-	int offset = ta.highestbars(high, lookback)
-
-	label.new(bar_index[offset], high[offset], alt.alt_print(l))
+	Tag.new(high[ta.highestbars(high, lookback)], "High")
 
 export low(int lookback) =>
 	if lookback < 0
@@ -28,6 +30,4 @@ export low(int lookback) =>
 
 		na
 
-	int offset = ta.lowestbars(low, lookback)
-
-	label.new(bar_index[offset], low[offset], alt.alt_print(l))
+	Tag.new(low[ta.lowestbars(low, lookback)], "Low")
