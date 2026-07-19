@@ -1,6 +1,8 @@
 //@version=6
 library("zone")
 
+import JackisaDayTrader/err/1
+
 export type Zone
 	int start
 	int end
