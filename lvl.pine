@@ -22,7 +22,7 @@ export high(int lookback) =>
 
 		na
 
-	Tag.new(high[ta.highestbars(high, lookback)], "High")
+	Tag.new(high[ta.highestbars(high, lookback)], alt.alt_fmt(h))
 
 export low(int lookback) =>
 	if lookback < 0
@@ -30,4 +30,4 @@ export low(int lookback) =>
 
 		na
 
-	Tag.new(low[ta.lowestbars(low, lookback)], "Low")
+	Tag.new(low[ta.lowestbars(low, lookback)], alt.alt_fmt(l))
