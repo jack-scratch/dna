@@ -13,4 +13,4 @@ export print_enum(Err e) =>
 		Err.idx_neg => print("Index not natural number")
 		Err.idx_small => print("Index too small to accomodate size of pattern")
 
-		=> print(str.format("Invalid error code '{0}'", e))
+		=> print(str.format("Invalid error code \"{0}\"", e))
