@@ -21,3 +21,16 @@ export gap_up(int lookback) =>
 		na
 
 	close[i + 1] < open[i]
+
+export gap_down(int lookback) =>
+	if lookback < 0
+		err.print_enum(err.Err.idx_neg)
+
+		na
+
+	if lookback < 2
+		err.print_enum(err.Err.idx_small)
+
+		na
+
+	close[i + 1] > open[i]
