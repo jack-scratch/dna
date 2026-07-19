@@ -5,5 +5,5 @@ export type Alt
 	string name
 	string[] alt
 
-export alt_print(Alt alt) =>
+export alt_fmt(Alt alt) =>
 	str.format("{0} ({1})", alt.name, array.join(alt.alt, ", "))
