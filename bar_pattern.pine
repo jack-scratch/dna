@@ -37,7 +37,7 @@ export shark(int lookback)
 export bos(int lookback)
 	bar.Tag[] offset = array.new<bar.Tag>()
 	for int i = 0 to lookback
-		if low[i] < low[0]
+		if low[i] < low
 			array.push(offset, bar.Tag.new(i, "Break of Structure"))
 
 	offset
