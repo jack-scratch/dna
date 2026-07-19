@@ -1,5 +1,16 @@
 //@version=6
 library("err")
 
+export enum Err
+	idx_neg
+	idx_small
+
 export print(string msg) =>
 	log.error(str.format("Error: {0}", msg))
+
+export print_enum(Err e) =>
+	switch e
+		Err.idx_neg => print("Index not natural number")
+		Err.idx_small => print("Index too small to accomodate size of pattern")
+
+		=> print(str.format("Invalid error code '{0}'", e))
