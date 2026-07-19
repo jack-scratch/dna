@@ -4,13 +4,13 @@ library("lvl")
 import JackisaDayTrader/err/1
 import JackisaDayTrader/alt/1
 
-string[] l_alt = array.new<string>()
-l_alt.push("L")
-Alt l = Alt.new("Low", l_alt)
-
 string[] h_alt = array.new<string>()
 h_alt.push("H")
 Alt h = Alt.new("High", h_alt)
+
+string[] l_alt = array.new<string>()
+l_alt.push("L")
+Alt l = Alt.new("Low", l_alt)
 
 export type Tag
 	float lvl
