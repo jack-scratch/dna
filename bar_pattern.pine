@@ -17,7 +17,6 @@ export shark(int offset)
 
 	var int snd = offset - 1
 	var int thrd = offset - 2
-
 	open[thrd] < open[snd] and close[thrd] > close[snd] and open[snd] < open[offset] and close[snd] > close[offset]
 
 export bos_bull(int offset)
