@@ -4,11 +4,11 @@ library("bar")
 import JackisaDayTrader/err/1
 import JackisaDayTrader/util/1
 
-type Rng
+export type Rng
 	float high
 	float low
 
-type Bar
+export type Bar
 	Rng body
 	Rng wick
 
