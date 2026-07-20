@@ -104,7 +104,7 @@ export fvg(int offset)
 
 	bar.Tag[] offset = array.new<bar.Tag>()
 	for var int i = 0 to offset
-		if open[i] > close[i + 2]
+		if close[i] < open[i - 2]
 			array.push(offset, bar.Tag.new(bar_index[i], "Fair Value Gap"))
 
 	offset
