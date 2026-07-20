@@ -129,17 +129,7 @@ export high_wave(int offset) =>
 
 		na
 
-	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to offset
-		float open_curr = open[i]
-		float close_curr = close[i]
-
-		if high[i] - low[i] >= (close[i] - open[i]) * 2
-			array.push(offset, Tag.new(i, "High Wave Bar"))
-
-			break
-
-	offset
+	high[i] - low[i] >= (close[i] - open[i]) * 2
 
 export pinbar(int offset) =>
 	if offset < 0
