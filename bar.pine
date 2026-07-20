@@ -66,12 +66,7 @@ export doji(int offset) =>
 
 		na
 
-	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to offset
-		if close[i] == open[i]
-			array.push(offset, Tag.new(i, "Doji Bar"))
-
-	offset
+	close[i] == open[i]
 
 export doji_gravestone(int offset) =>
 	if offset < 0
@@ -84,13 +79,8 @@ export doji_gravestone(int offset) =>
 
 		na
 
-	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to offset
-		float mid = open[i]
-		if close[i] == mid and low[i] == mid and high[i] != mid
-			array.push(offset, Tag.new(i, "Gravestone Doji Bar"))
-
-	offset
+	float mid = open[i]
+	if close[i] == mid and low[i] == mid and high[i] != mid
 
 export doji_one_legged(int offset) =>
 	if offset < 0
@@ -103,13 +93,8 @@ export doji_one_legged(int offset) =>
 
 		na
 
-	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to offset
-		float mid = open[i]
-		if close[i] == mid and (low[i] != mid or high[i] != mid)
-			array.push(offset, Tag.new(i, "One Legged Doji Bar"))
-
-	offset
+	float mid = open[i]
+	if close[i] == mid and (low[i] != mid or high[i] != mid)
 	
 export hammer_inverted(int offset) =>
 	if offset < 0
