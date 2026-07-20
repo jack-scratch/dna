@@ -26,6 +26,24 @@ export shark(int offset)
 
 	offset
 
+export bos_bull(int offset)
+	if offset < 0
+		err.print(err.Err.idx_neg)
+
+		na
+
+	if offset < 2
+		err.print(err.Err.idx_small)
+
+		na
+
+	bar.Tag[] offset = array.new<bar.Tag>()
+	for int i = 0 to offset
+		if high[i] > high
+			array.push(offset, bar.Tag.new(i, "Bullish Break of Structure"))
+
+	offset
+
 export bos_bear(int offset)
 	if offset < 0
 		err.print(err.Err.idx_neg)
