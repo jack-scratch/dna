@@ -1,7 +1,19 @@
 //@version=6
 library("trend")
 
+import JackisaDayTrader/err/1
+
 export up(int lookback) =>
+	if lookback < 0
+		err.print(err.Err.idx_neg)
+
+		na
+
+	if lookback < 1
+		err.print(err.Err.idx_small)
+
+		na
+
 	if low <= low[lookback]
   	na
 
@@ -17,6 +29,16 @@ export up(int lookback) =>
 	label.new(bar_index[lookback], low[lookback], name)
 
 export down(int lookback) =>
+	if lookback < 0
+		err.print(err.Err.idx_neg)
+
+		na
+
+	if lookback < 1
+		err.print(err.Err.idx_small)
+
+		na
+
 	if high >= high[lookback]
 		na
 
