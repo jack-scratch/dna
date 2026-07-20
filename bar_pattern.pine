@@ -125,6 +125,19 @@ export fvg_bear(int offset)
 
 	close[i] > open[i - 2]
 
+export tweezer_top(int offset) =>
+	if offset < 0
+		err.print(err.Err.idx_neg)
+
+		na
+
+	if offset < 2
+		err.print(err.Err.idx_small)
+
+		na
+
+	if high[i] == high[i - 1]
+
 export tweezer_btm(int offset) =>
 	if offset < 0
 		err.print(err.Err.idx_neg)
