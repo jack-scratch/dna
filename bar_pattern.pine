@@ -91,7 +91,7 @@ export candle_bear_engulf(int offset)
 
 	offset
 
-export fvg(int offset)
+export fvg_bull(int offset)
 	if offset < 0
 		err.print(err.Err.idx_neg)
 
