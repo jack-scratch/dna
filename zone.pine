@@ -11,12 +11,12 @@ export type Zone
 
 export gap(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 2
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -27,12 +27,12 @@ export gap(int lookback) =>
 
 export gap_up(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 2
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -40,12 +40,12 @@ export gap_up(int lookback) =>
 
 export gap_down(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 2
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 

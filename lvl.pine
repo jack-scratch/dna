@@ -18,7 +18,7 @@ export type Tag
 
 export high(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
@@ -26,7 +26,7 @@ export high(int lookback) =>
 
 export low(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 

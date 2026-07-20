@@ -10,12 +10,12 @@ export type Tag
 
 export bull(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 1
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -28,12 +28,12 @@ export bull(int lookback) =>
 
 export bear(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 1
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -46,12 +46,12 @@ export bear(int lookback) =>
 
 export inside(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 2
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -65,12 +65,12 @@ export inside(int lookback) =>
 
 export doji(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 1
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -83,12 +83,12 @@ export doji(int lookback) =>
 
 export doji_gravestone(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 1
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -102,12 +102,12 @@ export doji_gravestone(int lookback) =>
 
 export doji_one_legged(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 1
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -121,12 +121,12 @@ export doji_one_legged(int lookback) =>
 	
 export hammer_inverted(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 1
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -144,12 +144,12 @@ export hammer_inverted(int lookback) =>
 
 export high_wave(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 1
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -167,12 +167,12 @@ export high_wave(int lookback) =>
 
 export pinbar(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 1
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 

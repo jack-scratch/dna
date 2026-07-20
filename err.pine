@@ -8,7 +8,7 @@ export enum Err
 fmt(string msg) =>
 	log.error(str.format("Error: {0}", msg))
 
-export print_enum(Err e) =>
+export print(Err e) =>
 	switch e
 		Err.idx_neg => fmt("Index not natural number")
 		Err.idx_small => fmt("Index too small to accomodate size of pattern")

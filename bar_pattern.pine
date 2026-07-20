@@ -14,12 +14,12 @@ type Pattern
 
 export shark(int lookback)
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 3
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -55,12 +55,12 @@ export three_white_soldier(int lookback)
 
 export candle_bull_engulf(int lookback)
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 2
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -73,12 +73,12 @@ export candle_bull_engulf(int lookback)
 
 export candle_bear_engulf(int lookback)
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 2
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -91,12 +91,12 @@ export candle_bear_engulf(int lookback)
 
 export fvg(int lookback)
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 3
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
@@ -109,12 +109,12 @@ export fvg(int lookback)
 
 export tweezer_btm(int lookback) =>
 	if lookback < 0
-		err.print_enum(err.Err.idx_neg)
+		err.print(err.Err.idx_neg)
 
 		na
 
 	if lookback < 2
-		err.print_enum(err.Err.idx_small)
+		err.print(err.Err.idx_small)
 
 		na
 
