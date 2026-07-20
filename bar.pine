@@ -4,6 +4,14 @@ library("bar")
 import JackisaDayTrader/err/1
 import JackisaDayTrader/util/1
 
+type Rng
+	float high
+	float low
+
+type Bar
+	Rng body
+	Rng wick
+
 export type Tag
 	int idx
 	string str

@@ -4,14 +4,6 @@ library("bar_pattern")
 import JackisaDayTrader/bar/1
 import JackisaDayTrader/zone/1
 
-type Rng
-	float high
-	float low
-
-type Bar
-	Rng body
-	Rng wick
-
 export shark(int lookback)
 	if lookback < 0
 		err.print(err.Err.idx_neg)
