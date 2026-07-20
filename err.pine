@@ -13,4 +13,4 @@ export print(Err e) =>
 		Err.idx_neg => fmt("Index not natural number")
 		Err.idx_small => fmt("Index too small to accomodate size of pattern")
 
-		=> fmt(str.format("Invalid error code \"{0}\"", e))
+		=> fmt(str.format("Invalid error code \"{0}\"", str.tostring(e)))
