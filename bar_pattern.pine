@@ -90,7 +90,8 @@ export candle_bull_engulf(int offset)
 
 	bar.Tag[] offset = array.new<bar.Tag>()
 	for var int i = 0 to offset
-		if (close[i + 1] < open[i + 1]) and (close[i] > open[i]) and ((open[i] < open[i + 1]) and (close[i] > close[i + 1]))
+		var int snd = i + 1
+		if (close[snd] < open[snd]) and (close[i] > open[i]) and ((open[i] < open[snd]) and (close[i] > close[snd]))
 			array.push(offset, bar.Tag.new(bar_index[i], "Bullish Engulfing Bar"))
 
 	offset
@@ -108,7 +109,8 @@ export candle_bear_engulf(int offset)
 
 	bar.Tag[] offset = array.new<bar.Tag>()
 	for var int i = 0 to offset
-		if (close[i + 1] > open[i + 1]) and (close[i] < open[i]) and ((open[i] < open[i + 1]) and (close[i] > close[i + 1]))
+		var int snd = i + 1
+		if (close[snd] > open[snd]) and (close[i] < open[i]) and ((open[i] < open[snd]) and (close[i] > close[snd]))
 			array.push(offset, bar.Tag.new(bar_index[i], "Bullish Engulfing Bar"))
 
 	offset
