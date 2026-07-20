@@ -16,130 +16,130 @@ export type Tag
 	int idx
 	string str
 
-export bull(int lookback) =>
-	if lookback < 0
+export bull(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 1
+	if offset < 1
 		err.print(err.Err.idx_small)
 
 		na
 
 	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		if close[i] > open[i]
 			array.push(offset, Tag.new(i, "Bullish Bar"))
 
 	offset
 
-export bear(int lookback) =>
-	if lookback < 0
+export bear(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 1
+	if offset < 1
 		err.print(err.Err.idx_small)
 
 		na
 
 	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		if close[i] < open[i]
 			array.push(offset, Tag.new(i, "Bearish Bar"))
 
 	offset
 
-export inside(int lookback) =>
-	if lookback < 0
+export inside(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 2
+	if offset < 2
 		err.print(err.Err.idx_small)
 
 		na
 
 	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		int idx_fst = i + 1
 		if util.body_floor(i) > util.body_floor(idx_fst) and util.body_roof(i) < util.body_roof(idx_fst)
 			array.push(offset, Tag.new(i, "Inside Bar"))
 
 	offset
 
-export doji(int lookback) =>
-	if lookback < 0
+export doji(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 1
+	if offset < 1
 		err.print(err.Err.idx_small)
 
 		na
 
 	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		if close[i] == open[i]
 			array.push(offset, Tag.new(i, "Doji Bar"))
 
 	offset
 
-export doji_gravestone(int lookback) =>
-	if lookback < 0
+export doji_gravestone(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 1
+	if offset < 1
 		err.print(err.Err.idx_small)
 
 		na
 
 	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		float mid = open[i]
 		if close[i] == mid and low[i] == mid and high[i] != mid
 			array.push(offset, Tag.new(i, "Gravestone Doji Bar"))
 
 	offset
 
-export doji_one_legged(int lookback) =>
-	if lookback < 0
+export doji_one_legged(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 1
+	if offset < 1
 		err.print(err.Err.idx_small)
 
 		na
 
 	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		float mid = open[i]
 		if close[i] == mid and (low[i] != mid or high[i] != mid)
 			array.push(offset, Tag.new(i, "One Legged Doji Bar"))
 
 	offset
 	
-export hammer_inverted(int lookback) =>
-	if lookback < 0
+export hammer_inverted(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 1
+	if offset < 1
 		err.print(err.Err.idx_small)
 
 		na
 
 	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		float open_curr = open[i]
 		float close_curr = close[i]
 
@@ -150,19 +150,19 @@ export hammer_inverted(int lookback) =>
 
 	offset
 
-export high_wave(int lookback) =>
-	if lookback < 0
+export high_wave(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 1
+	if offset < 1
 		err.print(err.Err.idx_small)
 
 		na
 
 	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		float open_curr = open[i]
 		float close_curr = close[i]
 
@@ -173,19 +173,19 @@ export high_wave(int lookback) =>
 
 	offset
 
-export pinbar(int lookback) =>
-	if lookback < 0
+export pinbar(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 1
+	if offset < 1
 		err.print(err.Err.idx_small)
 
 		na
 
 	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		if math.abs(high[i] - low[i]) >= math.abs(close[i] - open[i]) * (2 / 3)
 			array.push(offset, Tag.new(i, "Pinbar"))
 

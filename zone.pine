@@ -9,44 +9,44 @@ export type Zone
 	float floor
 	float roof
 
-export gap(int lookback) =>
-	if lookback < 0
+export gap(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 2
+	if offset < 2
 		err.print(err.Err.idx_small)
 
 		na
 
-	float close_fst = close[lookback]
-	float open_snd = open[lookback - 1]
+	float close_fst = close[offset]
+	float open_snd = open[offset - 1]
 
 	math.max(close_fst, open_snd) < math.min(close_fst, open_snd)
 
-export gap_up(int lookback) =>
-	if lookback < 0
+export gap_up(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 2
+	if offset < 2
 		err.print(err.Err.idx_small)
 
 		na
 
-	close[lookback] < open[lookback - 1]
+	close[offset] < open[offset - 1]
 
-export gap_down(int lookback) =>
-	if lookback < 0
+export gap_down(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 2
+	if offset < 2
 		err.print(err.Err.idx_small)
 
 		na
 
-	close[lookback] > open[lookback - 1]
+	close[offset] > open[offset - 1]

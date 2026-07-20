@@ -16,18 +16,18 @@ export type Tag
 	float lvl
 	string str
 
-export high(int lookback) =>
-	if lookback < 0
+export high(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	Tag.new(high[ta.highestbars(high, lookback)], name.name_fmt(h))
+	Tag.new(high[ta.highestbars(high, offset)], name.name_fmt(h))
 
-export low(int lookback) =>
-	if lookback < 0
+export low(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	Tag.new(low[ta.lowestbars(low, lookback)], name.name_fmt(l))
+	Tag.new(low[ta.lowestbars(low, offset)], name.name_fmt(l))

@@ -4,19 +4,19 @@ library("bar_pattern")
 import JackisaDayTrader/bar/1
 import JackisaDayTrader/zone/1
 
-export shark(int lookback)
-	if lookback < 0
+export shark(int offset)
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 3
+	if offset < 3
 		err.print(err.Err.idx_small)
 
 		na
 
 	var int idx = 0
-	for var int i = 0 to lookback - 2
+	for var int i = 0 to offset - 2
 		var int snd = i + 1
 		var int thrd = i + 2
 
@@ -26,27 +26,27 @@ export shark(int lookback)
 
 	offset
 
-export bos(int lookback)
+export bos(int offset)
 	bar.Tag[] offset = array.new<bar.Tag>()
-	for int i = 0 to lookback
+	for int i = 0 to offset
 		if low[i] < low
 			array.push(offset, bar.Tag.new(i, "Break of Structure"))
 
 	offset
 
-export three_white_soldier(int lookback)
-	if lookback < 0
+export three_white_soldier(int offset)
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 2
+	if offset < 2
 		err.print(err.Err.idx_small)
 
 		na
 
 	var int idx = 0
-	for var int i = 0 to lookback - 2
+	for var int i = 0 to offset - 2
 		var int snd = i + 1
 		var int thrd = i + 2
 
@@ -55,73 +55,73 @@ export three_white_soldier(int lookback)
 
 			break
 
-export candle_bull_engulf(int lookback)
-	if lookback < 0
+export candle_bull_engulf(int offset)
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 2
+	if offset < 2
 		err.print(err.Err.idx_small)
 
 		na
 
 	bar.Tag[] offset = array.new<bar.Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		if (close[i + 1] < open[i + 1]) and (close[i] > open[i]) and ((open[i] < open[i + 1]) and (close[i] > close[i + 1]))
 			array.push(offset, bar.Tag.new(bar_index[i], "Bullish Engulfing Bar"))
 
 	offset
 
-export candle_bear_engulf(int lookback)
-	if lookback < 0
+export candle_bear_engulf(int offset)
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 2
+	if offset < 2
 		err.print(err.Err.idx_small)
 
 		na
 
 	bar.Tag[] offset = array.new<bar.Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		if (close[i + 1] > open[i + 1]) and (close[i] < open[i]) and ((open[i] < open[i + 1]) and (close[i] > close[i + 1]))
 			array.push(offset, bar.Tag.new(bar_index[i], "Bullish Engulfing Bar"))
 
 	offset
 
-export fvg(int lookback)
-	if lookback < 0
+export fvg(int offset)
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 3
+	if offset < 3
 		err.print(err.Err.idx_small)
 
 		na
 
 	bar.Tag[] offset = array.new<bar.Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		if open[i] > close[i + 2]
 			array.push(offset, bar.Tag.new(bar_index[i], "Fair Value Gap"))
 
 	offset
 
-export tweezer_btm(int lookback) =>
-	if lookback < 0
+export tweezer_btm(int offset) =>
+	if offset < 0
 		err.print(err.Err.idx_neg)
 
 		na
 
-	if lookback < 2
+	if offset < 2
 		err.print(err.Err.idx_small)
 
 		na
 
 	bar.Tag[] offset = array.new<bar.Tag>()
-	for var int i = 0 to lookback
+	for var int i = 0 to offset
 		int idx_fst = i + 1
 		if low[idx_fst] == low[i]
 			array.push(offset, bar.Tag.new(idx_fst, "Tweezer Bottom"))
