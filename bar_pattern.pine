@@ -8,7 +8,7 @@ type Rng
 	float high
 	float low
 
-type Pattern
+type Bar
 	Rng body
 	Rng wick
 
