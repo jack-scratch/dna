@@ -26,7 +26,7 @@ export shark(int offset)
 
 	offset
 
-export bos(int offset)
+export bos_bear(int offset)
 	if offset < 0
 		err.print(err.Err.idx_neg)
 
@@ -40,7 +40,7 @@ export bos(int offset)
 	bar.Tag[] offset = array.new<bar.Tag>()
 	for int i = 0 to offset
 		if low[i] < low
-			array.push(offset, bar.Tag.new(i, "Break of Structure"))
+			array.push(offset, bar.Tag.new(i, "Bearish Break of Structure"))
 
 	offset
 
