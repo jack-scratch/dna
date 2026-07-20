@@ -79,7 +79,7 @@ export doji_gravestone(int offset) =>
 
 		na
 
-	if doji(i) and low[i] == open[i] and high[i] != open[i]
+	doji(i) and low[i] == open[i] and high[i] != open[i]
 
 export doji_one_legged(int offset) =>
 	if offset < 0
@@ -93,7 +93,7 @@ export doji_one_legged(int offset) =>
 		na
 
 	float mid = open[i]
-	if close[i] == mid and (low[i] != mid or high[i] != mid)
+	close[i] == mid and (low[i] != mid or high[i] != mid)
 	
 export hammer_inverted(int offset) =>
 	if offset < 0
