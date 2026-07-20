@@ -53,13 +53,7 @@ export inside(int offset) =>
 
 		na
 
-	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to offset
-		int idx_fst = i + 1
-		if util.body_floor(i) > util.body_floor(idx_fst) and util.body_roof(i) < util.body_roof(idx_fst)
-			array.push(offset, Tag.new(i, "Inside Bar"))
-
-	offset
+	util.body_floor(i) > util.body_floor(idx_fst) and util.body_roof(i) < util.body_roof(idx_fst)
 
 export doji(int offset) =>
 	if offset < 0
