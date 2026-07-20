@@ -5,7 +5,7 @@ export enum Err
 	idx_neg
 	idx_small
 
-export print(string msg) =>
+print(string msg) =>
 	log.error(str.format("Error: {0}", msg))
 
 export print_enum(Err e) =>
