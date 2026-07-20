@@ -15,16 +15,10 @@ export shark(int offset)
 
 		na
 
-	var int idx = 0
-	for var int i = 2 to offset
-		var int snd = i - 1
-		var int thrd = i - 2
+	var int snd = offset - 1
+	var int thrd = offset - 2
 
-		bar.Tag[] offset = array.new<bar.Tag>()
-		if open[thrd] < open[snd] and close[thrd] > close[snd] and open[snd] < open[i] and close[snd] > close[i]
-			array.push(offset(bar.Tag.new(i, "Shark")))
-
-	offset
+	open[thrd] < open[snd] and close[thrd] > close[snd] and open[snd] < open[offset] and close[snd] > close[offset]
 
 export bos_bull(int offset)
 	if offset < 0
