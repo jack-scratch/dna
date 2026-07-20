@@ -142,9 +142,4 @@ export pinbar(int offset) =>
 
 		na
 
-	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to offset
-		if math.abs(high[i] - low[i]) >= math.abs(close[i] - open[i]) * (2 / 3)
-			array.push(offset, Tag.new(i, "Pinbar"))
-
-	offset
+	math.abs(high[i] - low[i]) >= math.abs(close[i] - open[i]) * (2 / 3)
