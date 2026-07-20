@@ -6,11 +6,11 @@ import JackisaDayTrader/name/1
 
 string[] h_alt = array.new<string>()
 h_alt.push("H")
-Alt h = Alt.new("High", h_alt)
+Name h = Name.new("High", h_alt)
 
 string[] l_alt = array.new<string>()
 l_alt.push("L")
-Alt l = Alt.new("Low", l_alt)
+Name l = Name.new("Low", l_alt)
 
 export type Tag
 	float lvl
@@ -22,7 +22,7 @@ export high(int lookback) =>
 
 		na
 
-	Tag.new(high[ta.highestbars(high, lookback)], alt.alt_fmt(h))
+	Tag.new(high[ta.highestbars(high, lookback)], name.alt_fmt(h))
 
 export low(int lookback) =>
 	if lookback < 0
@@ -30,4 +30,4 @@ export low(int lookback) =>
 
 		na
 
-	Tag.new(low[ta.lowestbars(low, lookback)], alt.alt_fmt(l))
+	Tag.new(low[ta.lowestbars(low, lookback)], name.alt_fmt(l))

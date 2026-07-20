@@ -1,9 +1,9 @@
 //@version=6
 library("name")
 
-export type Alt
+export type Name
 	string name
 	string[] alt
 
-export alt_fmt(Alt alt) =>
-	str.format("{0} ({1})", alt.name, array.join(alt.alt, ", "))
+export alt_fmt(Name name) =>
+	str.format("{0} ({1})", name.name, array.join(name.alt, ", "))
