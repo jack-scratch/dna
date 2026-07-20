@@ -83,7 +83,7 @@ export candle_bull_engulf(int offset)
 		na
 
 	var int snd = i + 1
-	if (close[snd] < open[snd]) and (close[i] > open[i]) and ((open[i] < open[snd]) and (close[i] > close[snd]))
+	(close[snd] < open[snd]) and (close[i] > open[i]) and ((open[i] < open[snd]) and (close[i] > close[snd]))
 
 export candle_bear_engulf(int offset)
 	if offset < 0
@@ -97,7 +97,7 @@ export candle_bear_engulf(int offset)
 		na
 
 	var int snd = i + 1
-	if (close[snd] > open[snd]) and (close[i] < open[i]) and ((open[i] < open[snd]) and (close[i] > close[snd]))
+	(close[snd] > open[snd]) and (close[i] < open[i]) and ((open[i] < open[snd]) and (close[i] > close[snd]))
 
 export fvg_bull(int offset)
 	if offset < 0
@@ -110,12 +110,7 @@ export fvg_bull(int offset)
 
 		na
 
-	bar.Tag[] offset = array.new<bar.Tag>()
-	for var int i = 0 to offset
-		if close[i] < open[i - 2]
-			array.push(offset, bar.Tag.new(bar_index[i], "Fair Value Gap"))
-
-	offset
+	close[i] < open[i - 2]
 
 export tweezer_btm(int offset) =>
 	if offset < 0
