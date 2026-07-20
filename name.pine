@@ -5,5 +5,5 @@ export type Name
 	string name
 	string[] alt
 
-export name_fmt(Name name) =>
+export method name_fmt(Name name) =>
 	str.format("{0} ({1})", name.name, array.join(name.alt, ", "))
