@@ -27,6 +27,16 @@ export shark(int offset)
 	offset
 
 export bos(int offset)
+	if offset < 0
+		err.print(err.Err.idx_neg)
+
+		na
+
+	if offset < 2
+		err.print(err.Err.idx_small)
+
+		na
+
 	bar.Tag[] offset = array.new<bar.Tag>()
 	for int i = 0 to offset
 		if low[i] < low
