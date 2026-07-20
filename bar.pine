@@ -27,12 +27,7 @@ export bull(int offset) =>
 
 		na
 
-	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to offset
-		if close[i] > open[i]
-			array.push(offset, Tag.new(i, "Bullish Bar"))
-
-	offset
+	close[i] > open[i]
 
 export bear(int offset) =>
 	if offset < 0
@@ -45,12 +40,7 @@ export bear(int offset) =>
 
 		na
 
-	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to offset
-		if close[i] < open[i]
-			array.push(offset, Tag.new(i, "Bearish Bar"))
-
-	offset
+	if close[i] < open[i]
 
 export inside(int offset) =>
 	if offset < 0
