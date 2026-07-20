@@ -1,6 +1,0 @@
-//@version=6
-library("color")
-
-const color straight = color.white
-const color pos = color.blue
-const color neg = color.red
