@@ -106,17 +106,10 @@ export hammer_inverted(int offset) =>
 
 		na
 
-	Tag[] offset = array.new<Tag>()
-	for var int i = 0 to offset
-		float open_curr = open[i]
-		float close_curr = close[i]
+	float open_curr = open[i]
+	float close_curr = close[i]
 
-		if high[i] - math.max(open_curr, close_curr) > math.abs(open_curr - close_curr)
-			array.push(offset, Tag.new(i, "Inverted Hammer Bar"))
-
-			break
-
-	offset
+	high[i] - math.max(open_curr, close_curr) > math.abs(open_curr - close_curr)
 
 export high_wave(int offset) =>
 	if offset < 0
