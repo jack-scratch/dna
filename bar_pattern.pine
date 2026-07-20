@@ -146,7 +146,7 @@ export tweezer_btm(int offset) =>
 
 	bar.Tag[] offset = array.new<bar.Tag>()
 	for var int i = 0 to offset
-		if low[i - 1] == low[i]
+		if low[i] == low[i - 1]
 			array.push(offset, bar.Tag.new(i, "Tweezer Bottom"))
 
 	offset
