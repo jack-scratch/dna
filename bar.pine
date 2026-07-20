@@ -14,7 +14,7 @@ export type Bar
 
 export type Tag
 	int idx
-	string str
+	string s
 
 export bull(int offset) =>
 	if offset < 0
