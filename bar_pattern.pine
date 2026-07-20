@@ -33,7 +33,7 @@ export bos_bull(int offset)
 	bar.Tag[] offset = array.new<bar.Tag>()
 	for var int i = offset to 0 by -1
 		if high[i] > high
-			array.push(offset, bar.Tag.new(i, "Break of Structure (Bullish)"))
+			offset.push(bar.Tag.new(i, "Break of Structure (Bullish)"))
 
 	offset
 
@@ -51,7 +51,7 @@ export bos_bear(int offset)
 	bar.Tag[] offset = array.new<bar.Tag>()
 	for var int i = offset to 0 by -1
 		if low[i] < low
-			array.push(offset, bar.Tag.new(i, "Break of Structure (Bearish)"))
+			offset.push(bar.Tag.new(i, "Break of Structure (Bearish)"))
 
 	offset
 
