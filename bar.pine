@@ -67,7 +67,7 @@ export doji(int offset) =>
 
 		na
 
-	close[offset] == open[offset]
+	open[offset] == close[offset]
 
 export doji_gravestone(int offset) =>
 	if offset < 0
