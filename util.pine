@@ -6,15 +6,6 @@ export body_floor(int idx) =>
 
 export body_roof(int idx) =>
 	math.max(open[idx], close[idx])
-    
-export wick_floor(int idx) =>
-	math.min(high[idx], low[idx])
-
-export wick_roof(int idx) =>
-	math.max(high[idx], low[idx])
 
 export body(int idx) =>
 	[body_floor(idx), body_roof(idx)]
-    
-export wick(int idx) =>
-	[wick_floor(idx), wick_roof(idx)]
