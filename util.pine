@@ -14,11 +14,7 @@ export wick_roof(int idx) =>
 	math.max(high[idx], low[idx])
 
 export body(int idx) =>
-	floor = body_floor(idx)
-	roof = body_roof(idx)
-	[floor, roof]
+	[body_floor(idx), body_roof(idx)]
     
 export wick(int idx) =>
-	floor = wick_floor(idx)
-	roof = wick_roof(idx)
-	[floor, roof]
+	[wick_floor(idx), wick_roof(idx)]
