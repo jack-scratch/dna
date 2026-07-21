@@ -2,8 +2,8 @@
 library("name")
 
 export type Name
-	string name
+	string prim
 	string[] alt
 
 export method name_fmt(Name name) =>
-	str.format("{0} ({1})", name.name, array.join(name.alt, ", "))
+	str.format("{0} ({1})", name.prim, array.join(name.alt, ", "))
