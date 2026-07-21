@@ -110,7 +110,6 @@ export hammer_inverted(int offset) =>
 
 	float open_curr = open[offset]
 	float close_curr = close[offset]
-
 	high[offset] - math.max(open_curr, close_curr) > math.abs(open_curr - close_curr)
 
 export high_wave(int offset) =>
