@@ -9,3 +9,9 @@ export body_roof(int idx) =>
 
 export body(int idx) =>
 	[body_floor(idx), body_roof(idx)]
+
+export wick_upper(int idx)
+	math.abs(high - body_roof(idx))
+
+export wick_lower(int idx)
+	math.abs(low - body_floor(idx))
