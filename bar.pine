@@ -80,7 +80,8 @@ export doji_gravestone(int offset) =>
 
 		na
 
-	doji(offset) and low[offset] == open[offset] and high[offset] != open[offset]
+	float o = open[offset]
+	doji(offset) and low[offset] == o and high[offset] != o
 
 export doji_one_legged(int offset) =>
 	if offset < 0
