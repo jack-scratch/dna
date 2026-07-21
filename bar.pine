@@ -27,7 +27,7 @@ export bull(int offset) =>
 
 		na
 
-	close[i] > open[i]
+	close[offset] > open[offset]
 
 export bear(int offset) =>
 	if offset < 0
@@ -40,7 +40,7 @@ export bear(int offset) =>
 
 		na
 
-	if close[i] < open[i]
+	if close[offset] < open[offset]
 
 export inside(int offset) =>
 	if offset < 0
@@ -66,7 +66,7 @@ export doji(int offset) =>
 
 		na
 
-	close[i] == open[i]
+	close[offset] == open[offset]
 
 export doji_gravestone(int offset) =>
 	if offset < 0
@@ -79,7 +79,7 @@ export doji_gravestone(int offset) =>
 
 		na
 
-	doji(i) and low[i] == open[i] and high[i] != open[i]
+	doji(offset) and low[offset] == open[offset] and high[offset] != open[offset]
 
 export doji_one_legged(int offset) =>
 	if offset < 0
@@ -92,8 +92,8 @@ export doji_one_legged(int offset) =>
 
 		na
 
-	float mid = open[i]
-	close[i] == mid and (low[i] != mid or high[i] != mid)
+	float mid = open[offset]
+	close[offset] == mid and (low[offset] != mid or high[offset] != mid)
 	
 export hammer_inverted(int offset) =>
 	if offset < 0
@@ -106,10 +106,10 @@ export hammer_inverted(int offset) =>
 
 		na
 
-	float open_curr = open[i]
-	float close_curr = close[i]
+	float open_curr = open[offset]
+	float close_curr = close[offset]
 
-	high[i] - math.max(open_curr, close_curr) > math.abs(open_curr - close_curr)
+	high[offset] - math.max(open_curr, close_curr) > math.abs(open_curr - close_curr)
 
 export high_wave(int offset) =>
 	if offset < 0
@@ -122,7 +122,7 @@ export high_wave(int offset) =>
 
 		na
 
-	high[i] - low[i] >= (close[i] - open[i]) * 2
+	high[offset] - low[offset] >= (close[offset] - open[offset]) * 2
 
 export pinbar(int offset) =>
 	if offset < 0
@@ -135,4 +135,4 @@ export pinbar(int offset) =>
 
 		na
 
-	math.abs(high[i] - low[i]) >= math.abs(close[i] - open[i]) * (2 / 3)
+	math.abs(high[offset] - low[offset]) >= math.abs(close[offset] - open[offset]) * (2 / 3)
