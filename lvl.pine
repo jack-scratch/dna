@@ -22,7 +22,7 @@ export high(int offset) =>
 
 		na
 
-	Tag.new(high[ta.highestbars(high, offset)], name.name_fmt(h))
+	Tag.new(high[ta.highestbars(high, offset)], name.fmt(h))
 
 export low(int offset) =>
 	if offset < 0
@@ -30,4 +30,4 @@ export low(int offset) =>
 
 		na
 
-	Tag.new(low[ta.lowestbars(low, offset)], name.name_fmt(l))
+	Tag.new(low[ta.lowestbars(low, offset)], name.fmt(l))
