@@ -40,7 +40,7 @@ export bear(int offset) =>
 
 		na
 
-	if close[offset] < open[offset]
+	close[offset] < open[offset]
 
 export inside(int offset) =>
 	if offset < 0

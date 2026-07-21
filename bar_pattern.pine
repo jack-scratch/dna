@@ -159,6 +159,20 @@ export tweezer_btm(int offset) =>
 		na
 
 	if low[i] == low[i - 1]
+
+export swing_high(int offset)
+	if offset < 0
+		err.print(err.Err.idx_neg)
+
+		na
+
+	if offset < 3
+		err.print(err.Err.idx_small)
+
+		na
+
+	var float mid = high[offset - 1]
+	high[offset] < mid and mid > high[offset - 2]
 	
 export swing_low(int offset)
 	if offset < 0
