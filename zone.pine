@@ -22,7 +22,6 @@ export gap(int offset) =>
 
 	float close_fst = close[offset]
 	float open_snd = open[offset - 1]
-
 	math.max(close_fst, open_snd) < math.min(close_fst, open_snd)
 
 export gap_up(int offset) =>
