@@ -14,7 +14,7 @@ Name l = Name.new("Low", l_alt)
 
 export type Tag
 	float lvl
-	string s
+	string name
 
 export high(int offset) =>
 	if offset < 0
