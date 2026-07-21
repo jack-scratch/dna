@@ -8,4 +8,6 @@ export body_roof(int idx) =>
 	math.max(open[idx], close[idx])
 
 export body(int idx) =>
-	[body_floor(idx), body_roof(idx)]
+	floor = body_floor(idx)
+	roof = body_roof(idx)
+	[floor, roof]
