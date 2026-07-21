@@ -53,7 +53,8 @@ export inside(int offset) =>
 
 		na
 
-	util.body_floor(i) > util.body_floor(idx_fst) and util.body_roof(i) < util.body_roof(idx_fst)
+	var float idx_fst = offset + 1
+	util.body_floor(offset) > util.body_floor(idx_fst) and util.body_roof(offset) < util.body_roof(idx_fst)
 
 export doji(int offset) =>
 	if offset < 0
