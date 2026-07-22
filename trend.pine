@@ -3,11 +3,13 @@ library("trend")
 
 import JackisaDayTrader/err/1
 
+type Loc
+	int idx
+	float lvl
+
 export type Seg
-	int l
-	float l_lvl
-	int r
-	float r_lvl
+	Loc l
+	Loc r
 	string name
 
 export up(int offset) =>
