@@ -8,7 +8,7 @@ export type Seg
 	int l_lvl
 	int r
 	int r_lvl
-	string s
+	string name
 
 export up(int offset) =>
 	if offset < 0
