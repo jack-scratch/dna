@@ -5,9 +5,9 @@ import JackisaDayTrader/err/1
 
 export type Seg
 	int l
-	int l_lvl
+	float l_lvl
 	int r
-	int r_lvl
+	float r_lvl
 	string name
 
 export up(int offset) =>
