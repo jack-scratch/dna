@@ -22,10 +22,20 @@ export high(int offset) =>
 
 		na
 
+	if offset < 1
+		err.print(err.Err.idx_neg)
+
+		na
+
 	Tag.new(high[ta.highestbars(high, offset)], name.fmt(h))
 
 export low(int offset) =>
 	if offset < 0
+		err.print(err.Err.idx_neg)
+
+		na
+
+	if offset < 1
 		err.print(err.Err.idx_neg)
 
 		na
