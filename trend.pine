@@ -16,7 +16,7 @@ export up(int offset) =>
 
 		na
 
-	if offset < 1
+	if offset < 2
 		err.print(err.Err.idx_small)
 
 		na
@@ -36,7 +36,7 @@ export down(int offset) =>
 
 		na
 
-	if offset < 1
+	if offset < 2
 		err.print(err.Err.idx_small)
 
 		na
